@@ -1,9 +1,8 @@
 name: Deploy Hugo site to Pages
 
 on:
-  # 這裡我已經幫你改成 master 了
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # 允許你手動按按鈕觸發
   workflow_dispatch:
