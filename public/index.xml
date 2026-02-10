@@ -6,17 +6,29 @@
     <description>Recent content on Diary of Ryan</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 11:17:48 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/my-process-blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>我的第一篇除錯筆記</title>
-      <link>http://localhost:1313/my-process-blog/posts/first-pain/</link>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/my-process-blog/posts/first-pain/</guid>
-      <description>&lt;h2 id=&#34;這是我的第一篇測試&#34;&gt;這是我的第一篇測試&lt;/h2&gt;
-&lt;p&gt;數學公式測試：
+      <title>BadServer</title>
+      <link>http://localhost:1313/my-process-blog/posts/badserver/</link>
+      <pubDate>Tue, 10 Feb 2026 11:17:48 +0800</pubDate>
+      <guid>http://localhost:1313/my-process-blog/posts/badserver/</guid>
+      <description>&lt;h1 id=&#34;situation&#34;&gt;Situation&lt;/h1&gt;
+&lt;p&gt;I established and finish testing on local, but when I prepare to upload and run it on github, many errors appear.&lt;/p&gt;
+&lt;h1 id=&#34;action&#34;&gt;Action&lt;/h1&gt;
+&lt;p&gt;I copied the error message and sent it to Gemini, he asked me to check the documents and setting. After I make sure everything went well, he asked me to check the status of github.&lt;/p&gt;
+&lt;h1 id=&#34;result&#34;&gt;Result&lt;/h1&gt;
+&lt;p&gt;I check it and found it broke. I would check the status of website first if everything went wrong.(lots of error message)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Website test</title>
+      <link>http://localhost:1313/my-process-blog/posts/firstpain/</link>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/my-process-blog/posts/firstpain/</guid>
+      <description>&lt;h2 id=&#34;first-post-in-website&#34;&gt;First post in website&lt;/h2&gt;
+&lt;p&gt;Math function test：
 $$f(x) = \int_{-\infty}^\infty \hat f(\xi),e^{2\pi i \xi x} ,d\xi$$&lt;/p&gt;
-&lt;p&gt;程式碼測試：&lt;/p&gt;
+&lt;p&gt;Code funtion test：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello World&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
