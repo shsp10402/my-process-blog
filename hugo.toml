@@ -1,4 +1,5 @@
-baseURL = 'https://example.org/'
+# 請確保這裡的網址完全正確
+baseURL = 'https://shsp10402.github.io/my-process-blog/'
 languageCode = 'zh-tw'
 title = 'My Process'
 theme = 'PaperMod'
@@ -7,26 +8,23 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 
-# 這是為了讓你可以寫數學公式 (LaTeX)
 [params]
-  defaultTheme = "auto" # 自動切換深色模式
-  ShowReadingTime = true # 顯示閱讀時間
-  ShowShareButtons = false # 駭客不需要分享按鈕
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true # 程式碼區塊顯示複製按鈕 (重要!)
+  ShowCodeCopyButtons = true
   
-  # 啟用 MathJax (數學公式支援)
-  [params.assets]
-    disableHLJS = false
-  
-  # 這一行是為了讓數學公式能跑
-  math = true 
+  # 啟用數學公式支援
+  math = true
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true # 允許你在 Markdown 裡寫原生的 HTML (例如 <canvas>)
+      unsafe = true  # 允許使用原生 HTML，這對數學公式的某些進階顯示很有用
 
   [markup.highlight]
     noClasses = false
+    # 這是為了讓程式碼高亮更漂亮
+    style = "monokai"
