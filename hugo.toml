@@ -1,7 +1,7 @@
 # 請確保這裡的網址完全正確
 baseURL = 'https://shsp10402.github.io/my-process-blog/'
-languageCode = 'zh-tw'
-title = 'My Process'
+languageCode = 'en-us'
+title = 'My Diary'
 theme = 'PaperMod'
 
 enableRobotsTXT = true
