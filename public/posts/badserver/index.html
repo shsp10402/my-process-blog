@@ -5,14 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>BadServer | Diary of Ryan</title>
+<title>GitHub Actions Failure: A Debugging Post-mortem | Diary of Ryan</title>
 <meta name="keywords" content="">
 <meta name="description" content="Situation
-I established and finish testing on local, but when I prepare to upload and run it on github, many errors appear.
+Local environment (hugo server) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp; Branch Protection issues).
+Task
+Isolate whether the failure originated from my configuration files (hugo.toml, YAML scripts) or external service disruptions.
 Action
-I copied the error message and sent it to Gemini, he asked me to check the documents and setting. After I make sure everything went well, he asked me to check the status of github.
+
+Script Audit: Verified GitHub Actions YAML syntax and environment permissions.
+Log Analysis: Consulted Gemini to interpret the HTTP 500 stack trace.
+External Verification: Checked the official GitHub Status dashboard after local configurations were confirmed correct.
+
 Result
-I check it and found it broke. I would check the status of website first if everything went wrong.(lots of error message)">
+The root cause was an upstream GitHub Service Outage.
+Lesson Learned: Before diving into a &ldquo;code-fix&rdquo; rabbit hole, check the service status first.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/my-process-blog/posts/badserver/">
 <link crossorigin="anonymous" href="/my-process-blog/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
@@ -128,19 +135,31 @@ I check it and found it broke. I would check the status of website first if ever
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/my-process-blog/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/my-process-blog/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      BadServer
+      GitHub Actions Failure: A Debugging Post-mortem
     </h1>
-    <div class="post-meta"><span title='2026-02-10 11:17:48 +0800 CST'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
+    <div class="post-meta"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
 
 </div>
   </header> 
-  <div class="post-content"><h1 id="situation">Situation<a hidden class="anchor" aria-hidden="true" href="#situation">#</a></h1>
-<p>I established and finish testing on local, but when I prepare to upload and run it on github, many errors appear.</p>
-<h1 id="action">Action<a hidden class="anchor" aria-hidden="true" href="#action">#</a></h1>
-<p>I copied the error message and sent it to Gemini, he asked me to check the documents and setting. After I make sure everything went well, he asked me to check the status of github.</p>
-<h1 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h1>
-<p>I check it and found it broke. I would check the status of website first if everything went wrong.(lots of error message)</p>
-<p><img alt="Status" loading="lazy" src="/my-process-blog/posts/badserver/status.png"></p>
+  <div class="post-content"><h3 id="situation">Situation<a hidden class="anchor" aria-hidden="true" href="#situation">#</a></h3>
+<p>Local environment (<code>hugo server</code>) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp; Branch Protection issues).</p>
+<h3 id="task">Task<a hidden class="anchor" aria-hidden="true" href="#task">#</a></h3>
+<p>Isolate whether the failure originated from my configuration files (<code>hugo.toml</code>, YAML scripts) or external service disruptions.</p>
+<h3 id="action">Action<a hidden class="anchor" aria-hidden="true" href="#action">#</a></h3>
+<ol>
+<li><strong>Script Audit</strong>: Verified GitHub Actions YAML syntax and environment permissions.</li>
+<li><strong>Log Analysis</strong>: Consulted Gemini to interpret the HTTP 500 stack trace.</li>
+<li><strong>External Verification</strong>: Checked the official <strong>GitHub Status</strong> dashboard after local configurations were confirmed correct.</li>
+</ol>
+<h3 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h3>
+<p>The root cause was an upstream <strong>GitHub Service Outage</strong>.
+<strong>Lesson Learned</strong>: Before diving into a &ldquo;code-fix&rdquo; rabbit hole, check the service status first.</p>
+<blockquote>
+<p><strong>Efficiency Logic</strong>:
+Let $P(\text{fail})$ be the probability of a bug. If $\text{Local} = \text{Pass}$ but $\text{Remote} = \text{Fail}$, then:
+$$P(\text{Server Outage}) &gt; P(\text{Logic Error})$$</p>
+</blockquote>
+<p><img alt="GitHub Status" loading="lazy" src="/my-process-blog/posts/badserver/status.png"></p>
 
 
   </div>

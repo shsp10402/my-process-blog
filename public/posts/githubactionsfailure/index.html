@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.155.3"><script src="/my-process-blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my-process-blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/my-process-blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my-process-blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Diary of Ryan</title>
+<title>GitHub Actions Failure: A Debugging Post-mortem | Diary of Ryan</title>
+<meta name="keywords" content="">
+<meta name="description" content="Situation
+Local environment (hugo server) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp; Branch Protection issues).
+Task
+Isolate whether the failure originated from my configuration files (hugo.toml, YAML scripts) or external service disruptions.
+Action
 
-<meta name="description" content="">
+Script Audit: Verified GitHub Actions YAML syntax and environment permissions.
+Log Analysis: Consulted Gemini to interpret the HTTP 500 stack trace.
+External Verification: Checked the official GitHub Status dashboard after local configurations were confirmed correct.
+
+Result
+The root cause was an upstream GitHub Service Outage.
+Lesson Learned: Before diving into a &ldquo;code-fix&rdquo; rabbit hole, check the service status first.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/my-process-blog/">
+<link rel="canonical" href="http://localhost:1313/my-process-blog/posts/githubactionsfailure/">
 <link crossorigin="anonymous" href="/my-process-blog/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/my-process-blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/my-process-blog/favicon-16x16.png">
@@ -19,8 +30,7 @@
 <link rel="mask-icon" href="http://localhost:1313/my-process-blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/my-process-blog/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/my-process-blog/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/my-process-blog/posts/githubactionsfailure/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,9 +82,22 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -106,35 +129,55 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
+<main class="main">
 
-<article class="first-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">GitHub Actions Failure: A Debugging Post-mortem
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Situation Local environment (hugo server) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp; Branch Protection issues).
-Task Isolate whether the failure originated from my configuration files (hugo.toml, YAML scripts) or external service disruptions.
-Action Script Audit: Verified GitHub Actions YAML syntax and environment permissions. Log Analysis: Consulted Gemini to interpret the HTTP 500 stack trace. External Verification: Checked the official GitHub Status dashboard after local configurations were confirmed correct. Result The root cause was an upstream GitHub Service Outage. Lesson Learned: Before diving into a “code-fix” rabbit hole, check the service status first.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to GitHub Actions Failure: A Debugging Post-mortem" href="http://localhost:1313/my-process-blog/posts/githubactionsfailure/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/my-process-blog/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/my-process-blog/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      GitHub Actions Failure: A Debugging Post-mortem
+    </h1>
+    <div class="post-meta"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Website test
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>First post in website Math function test： $$f(x) = \int_{-\infty}^\infty \hat f(\xi),e^{2\pi i \xi x} ,d\xi$$
-Code funtion test：
-print(&#34;Hello World&#34;) </p>
+</div>
+  </header> 
+  <div class="post-content"><h3 id="situation">Situation<a hidden class="anchor" aria-hidden="true" href="#situation">#</a></h3>
+<p>Local environment (<code>hugo server</code>) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp; Branch Protection issues).</p>
+<h3 id="task">Task<a hidden class="anchor" aria-hidden="true" href="#task">#</a></h3>
+<p>Isolate whether the failure originated from my configuration files (<code>hugo.toml</code>, YAML scripts) or external service disruptions.</p>
+<h3 id="action">Action<a hidden class="anchor" aria-hidden="true" href="#action">#</a></h3>
+<ol>
+<li><strong>Script Audit</strong>: Verified GitHub Actions YAML syntax and environment permissions.</li>
+<li><strong>Log Analysis</strong>: Consulted Gemini to interpret the HTTP 500 stack trace.</li>
+<li><strong>External Verification</strong>: Checked the official <strong>GitHub Status</strong> dashboard after local configurations were confirmed correct.</li>
+</ol>
+<h3 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h3>
+<p>The root cause was an upstream <strong>GitHub Service Outage</strong>.
+<strong>Lesson Learned</strong>: Before diving into a &ldquo;code-fix&rdquo; rabbit hole, check the service status first.</p>
+<blockquote>
+<p><strong>Efficiency Logic</strong>:</p>
+<div style="padding-left: 2rem;">
+<p>Let $P(\text{fail})$ be the probability of a bug. If $\text{Local} = \text{Pass}$ but $\text{Remote} = \text{Fail}$, then:
+$$P(\text{Server Outage}) &gt; P(\text{Logic Error})$$</p>
+</div>
+</blockquote>
+<p><img alt="GitHub Status 2026/2/10 00:30" loading="lazy" src="/my-process-blog/posts/githubactionsfailure/status.png"></p>
+
+
   </div>
-  <footer class="entry-footer"><span title='2026-02-09 00:00:00 +0000 UTC'>February 9, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Website test" href="http://localhost:1313/my-process-blog/posts/firstpain/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/my-process-blog/posts/firstpain/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Website test</span>
+  </a>
+</nav>
+
+  </footer>
 </article>
     </main>
     
@@ -212,6 +255,53 @@ print(&#34;Hello World&#34;) </p>
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

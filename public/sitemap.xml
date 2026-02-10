@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/my-process-blog/posts/badserver/</loc>
-    <lastmod>2026-02-10T11:17:48+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/my-process-blog/</loc>
-    <lastmod>2026-02-10T11:17:48+08:00</lastmod>
+    <lastmod>2026-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/my-process-blog/posts/githubactionsfailure/</loc>
+    <lastmod>2026-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/my-process-blog/posts/</loc>
-    <lastmod>2026-02-10T11:17:48+08:00</lastmod>
+    <lastmod>2026-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/my-process-blog/posts/firstpain/</loc>
     <lastmod>2026-02-09T00:00:00+00:00</lastmod>

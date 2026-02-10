@@ -114,17 +114,17 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">BadServer
+    <h2 class="entry-hint-parent">GitHub Actions Failure: A Debugging Post-mortem
     </h2>
   </header>
   <div class="entry-content">
-    <p>Situation I established and finish testing on local, but when I prepare to upload and run it on github, many errors appear.
-Action I copied the error message and sent it to Gemini, he asked me to check the documents and setting. After I make sure everything went well, he asked me to check the status of github.
-Result I check it and found it broke. I would check the status of website first if everything went wrong.(lots of error message)
+    <p>Situation Local environment (hugo server) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp; Branch Protection issues).
+Task Isolate whether the failure originated from my configuration files (hugo.toml, YAML scripts) or external service disruptions.
+Action Script Audit: Verified GitHub Actions YAML syntax and environment permissions. Log Analysis: Consulted Gemini to interpret the HTTP 500 stack trace. External Verification: Checked the official GitHub Status dashboard after local configurations were confirmed correct. Result The root cause was an upstream GitHub Service Outage. Lesson Learned: Before diving into a “code-fix” rabbit hole, check the service status first.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-02-10 11:17:48 +0800 CST'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to BadServer" href="http://localhost:1313/my-process-blog/posts/badserver/"></a>
+  <footer class="entry-footer"><span title='2026-02-10 00:00:00 +0000 UTC'>February 10, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to GitHub Actions Failure: A Debugging Post-mortem" href="http://localhost:1313/my-process-blog/posts/githubactionsfailure/"></a>
 </article>
 
 <article class="post-entry"> 

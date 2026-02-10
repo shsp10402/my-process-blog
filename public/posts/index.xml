@@ -6,19 +6,26 @@
     <description>Recent content in Posts on Diary of Ryan</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Feb 2026 11:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/my-process-blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BadServer</title>
-      <link>http://localhost:1313/my-process-blog/posts/badserver/</link>
-      <pubDate>Tue, 10 Feb 2026 11:17:48 +0800</pubDate>
-      <guid>http://localhost:1313/my-process-blog/posts/badserver/</guid>
-      <description>&lt;h1 id=&#34;situation&#34;&gt;Situation&lt;/h1&gt;
-&lt;p&gt;I established and finish testing on local, but when I prepare to upload and run it on github, many errors appear.&lt;/p&gt;
-&lt;h1 id=&#34;action&#34;&gt;Action&lt;/h1&gt;
-&lt;p&gt;I copied the error message and sent it to Gemini, he asked me to check the documents and setting. After I make sure everything went well, he asked me to check the status of github.&lt;/p&gt;
-&lt;h1 id=&#34;result&#34;&gt;Result&lt;/h1&gt;
-&lt;p&gt;I check it and found it broke. I would check the status of website first if everything went wrong.(lots of error message)&lt;/p&gt;</description>
+      <title>GitHub Actions Failure: A Debugging Post-mortem</title>
+      <link>http://localhost:1313/my-process-blog/posts/githubactionsfailure/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/my-process-blog/posts/githubactionsfailure/</guid>
+      <description>&lt;h3 id=&#34;situation&#34;&gt;Situation&lt;/h3&gt;
+&lt;p&gt;Local environment (&lt;code&gt;hugo server&lt;/code&gt;) worked perfectly, but deploying to GitHub Pages triggered a cascade of errors (HTTP 500 &amp;amp; Branch Protection issues).&lt;/p&gt;
+&lt;h3 id=&#34;task&#34;&gt;Task&lt;/h3&gt;
+&lt;p&gt;Isolate whether the failure originated from my configuration files (&lt;code&gt;hugo.toml&lt;/code&gt;, YAML scripts) or external service disruptions.&lt;/p&gt;
+&lt;h3 id=&#34;action&#34;&gt;Action&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Script Audit&lt;/strong&gt;: Verified GitHub Actions YAML syntax and environment permissions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Log Analysis&lt;/strong&gt;: Consulted Gemini to interpret the HTTP 500 stack trace.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;External Verification&lt;/strong&gt;: Checked the official &lt;strong&gt;GitHub Status&lt;/strong&gt; dashboard after local configurations were confirmed correct.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;result&#34;&gt;Result&lt;/h3&gt;
+&lt;p&gt;The root cause was an upstream &lt;strong&gt;GitHub Service Outage&lt;/strong&gt;.
+&lt;strong&gt;Lesson Learned&lt;/strong&gt;: Before diving into a &amp;ldquo;code-fix&amp;rdquo; rabbit hole, check the service status first.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Website test</title>
