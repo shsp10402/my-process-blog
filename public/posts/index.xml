@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on My Process</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>http://localhost:1313/my-process-blog/posts/</link>
     <description>Recent content in Posts on My Process</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 09 Feb 2026 19:02:55 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/my-process-blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Pain</title>
-      <link>http://localhost:1313/posts/first-pain/</link>
-      <pubDate>Mon, 09 Feb 2026 19:02:55 +0800</pubDate>
-      <guid>http://localhost:1313/posts/first-pain/</guid>
+      <title>我的第一篇除錯筆記</title>
+      <link>http://localhost:1313/my-process-blog/posts/first-pain/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/my-process-blog/posts/first-pain/</guid>
       <description>&lt;h2 id=&#34;這是我的第一篇測試&#34;&gt;這是我的第一篇測試&lt;/h2&gt;
 &lt;p&gt;數學公式測試：
 $$f(x) = \int_{-\infty}^\infty \hat f(\xi),e^{2\pi i \xi x} ,d\xi$$&lt;/p&gt;
