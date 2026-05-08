@@ -14,11 +14,12 @@ and I don't know what's the condition.
 
 ### Solution
 I write some simple program to figure out the meaning
-
+```python
 >>> print("\x65")
 e
 >>> print("\x65" * 10) # 隨便乘個小數字測試
 eeeeeeeeee
+```
 
 ### Conclusion
 ```python
